@@ -1,4 +1,4 @@
-# springboot dev
+# Springboot dev
 
 ## Getting started
 
