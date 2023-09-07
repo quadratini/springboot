@@ -28,7 +28,6 @@ public class CruddemoApplication {
 		studentDAO.deleteAll();
 	}
 
-
 	private void deleteStudent(StudentDAO studentDAO) {
 		// get student and delete student
 		studentDAO.delete(3);
@@ -57,7 +56,6 @@ public class CruddemoApplication {
 		studentDAO.save(tempStudent2);
 		studentDAO.save(tempStudent3);
 	}
-
 
 	private void queryForStudents(StudentDAO studentDAO) {
 		List<Student> students = studentDAO.findAll();

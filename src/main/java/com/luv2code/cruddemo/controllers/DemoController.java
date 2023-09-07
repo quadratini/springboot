@@ -3,11 +3,12 @@ package com.luv2code.cruddemo.controllers;
 import com.luv2code.cruddemo.models.ICoach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.SpringApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/test")
 public class DemoController {
 
     private ICoach coach;
