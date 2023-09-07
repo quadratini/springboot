@@ -9,7 +9,7 @@
 5. Also be sure to add a user during the installation, the user "springstudent" and password "springstudent"
 6. If "springstudent" wasn't added during installation, can be added through MySQL workbench directly
 7. Create a student_tracker schema/database in workbench
-8. Run the main application, (CruddemoApplication.java) and tables will be created
+8. Run the main application, (CruddemoApplication.java) and the tables will be created
 
 
 ### Maven
