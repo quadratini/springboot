@@ -2,7 +2,10 @@ package com.luv2code.cruddemo.dao;
 
 import com.luv2code.cruddemo.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+// sets the path to be /members instead of /employees
+// @RepositoryRestResource(path = "members")
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     // that's it... no need to write any code LOL!! HAHA. I love it
 }

@@ -14,7 +14,6 @@ public class StudentDAOImpl implements StudentDAO {
 
     private EntityManager entityManager;
 
-    @Autowired
     public StudentDAOImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
