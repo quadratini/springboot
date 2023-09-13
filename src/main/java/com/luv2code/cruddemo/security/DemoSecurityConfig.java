@@ -30,6 +30,8 @@ public class DemoSecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/magic-api/employees").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.PUT, "/magic-api/employees").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.DELETE, "/magic-api/employees/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/**").hasRole("ADMIN")
+
         );
 
         // use HTTP basic authentication
