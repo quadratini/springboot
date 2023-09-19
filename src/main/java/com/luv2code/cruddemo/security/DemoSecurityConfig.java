@@ -30,8 +30,12 @@ public class DemoSecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/magic-api/employees").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.PUT, "/magic-api/employees").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.DELETE, "/magic-api/employees/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/**").hasRole("ADMIN")
 
+                        // troll way of keeping tutorial code. Just for easier testing and bypass any permissions
+                        .requestMatchers(HttpMethod.GET, "/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN")
         );
 
         // use HTTP basic authentication
