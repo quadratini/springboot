@@ -25,17 +25,12 @@ public class DemoSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
                 configurer
-                        .requestMatchers(HttpMethod.GET, "/magic-api/employees").hasRole("EMPLOYEE")
-                        .requestMatchers(HttpMethod.GET, "/magic-api/employees/**").hasRole("EMPLOYEE")
-                        .requestMatchers(HttpMethod.POST, "/magic-api/employees").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.PUT, "/magic-api/employees").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.DELETE, "/magic-api/employees/**").hasRole("ADMIN")
-
-                        // troll way of keeping tutorial code. Just for easier testing and bypass any permissions
-                        .requestMatchers(HttpMethod.GET, "/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN")
+                        .anyRequest().authenticated()
+        ).formLogin(form ->
+                form
+                        .loginPage("/showMyLoginPage")
+                        .loginProcessingUrl("/authenticateTheUser")
+                        .permitAll()
         );
 
         // use HTTP basic authentication
